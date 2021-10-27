@@ -54,14 +54,14 @@ public class ProductEventController {
         return new ResponseEntity<>(ProductEventDto.from(productEvent), HttpStatus.OK);
     }
 
-    @PostMapping(value = "{cartId}/items/{itemId}/add")
+    @PostMapping(value = "{eventId}/products/{productId}/add")
     public ResponseEntity<ProductEventDto> addProductToProductEvent(@PathVariable final Long eventId,
                                                                     @PathVariable final Long productId) {
         ProductEvent productEvent = productEventService.addProductToProductEvent(eventId, productId);
         return new ResponseEntity<>(ProductEventDto.from(productEvent), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "{cartId}/items/{itemId}/remove")
+    @DeleteMapping(value = "{eventId}/products/{productId}/remove")
     public ResponseEntity<ProductEventDto> removeProductFromProductEvent(@PathVariable final Long eventId,
                                                                          @PathVariable final Long productId) {
         ProductEvent productEvent = productEventService.removeItemFromCart(eventId, productId);
