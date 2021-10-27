@@ -1,0 +1,126 @@
+2021-10-27 13:17:27.243  INFO 653746 --- [main] c.r.e.EventsReaderSystemApplication      : Starting EventsReaderSystemApplication using Java 1.8.0_292 on dev105 with PID 653746 (/home/dev105/code/menora/events_reader_system/target/classes started by dev105 in /home/dev105/code/menora/events_reader_system)
+2021-10-27 13:17:27.256  INFO 653746 --- [main] c.r.e.EventsReaderSystemApplication      : No active profile set, falling back to default profiles: default
+2021-10-27 13:17:27.823  INFO 653746 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-10-27 13:17:27.866  INFO 653746 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2021-10-27 13:17:28.212  INFO 653746 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8086 (http)
+2021-10-27 13:17:28.217  INFO 653746 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 13:17:28.217  INFO 653746 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-27 13:17:28.261  INFO 653746 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/rest]   : Initializing Spring embedded WebApplicationContext
+2021-10-27 13:17:28.261  INFO 653746 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2021-10-27 13:17:28.283  INFO 653746 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-10-27 13:17:28.390  INFO 653746 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-10-27 13:17:28.393  INFO 653746 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:reader_system_db'
+2021-10-27 13:17:28.401 ERROR 653746 --- [main] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'formContentFilter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.fasterxml.jackson.datatype.jsr310.JavaTimeModule]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ser/std/ToStringSerializerBase
+2021-10-27 13:17:28.412  INFO 653746 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-10-27 13:17:28.414  WARN 653746 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [rest] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2021-10-27 13:17:28.416  WARN 653746 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2021-10-27 13:17:28.417  INFO 653746 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-10-27 13:17:28.418  INFO 653746 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-10-27 13:17:28.425  INFO 653746 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-10-27 13:17:28.441 ERROR 653746 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:163) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577) ~[spring-context-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) [spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) [spring-boot-2.5.6.jar:2.5.6]
+	at com.refael.events_reader_system.EventsReaderSystemApplication.main(EventsReaderSystemApplication.java:26) [classes/:na]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160) ~[spring-boot-2.5.6.jar:2.5.6]
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'formContentFilter' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.fasterxml.jackson.datatype.jsr310.JavaTimeModule]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ser/std/ToStringSerializerBase
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:175) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:170) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:155) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266) ~[na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:1.8.0_292]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_292]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266) ~[na:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java) ~[na:1.8.0_292]
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134) ~[na:1.8.0_292]
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123) ~[spring-boot-2.5.6.jar:2.5.6]
+	... 13 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.filter.OrderedFormContentFilter]: Factory method 'formContentFilter' threw exception; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.fasterxml.jackson.datatype.jsr310.JavaTimeModule]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ser/std/ToStringSerializerBase
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-5.3.12.jar:5.3.12]
+	... 56 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.fasterxml.jackson.datatype.jsr310.JavaTimeModule]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ser/std/ToStringSerializerBase
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:146) ~[spring-beans-5.3.12.jar:5.3.12]
+	at org.springframework.http.converter.json.Jackson2ObjectMapperBuilder.registerWellKnownModulesIfAvailable(Jackson2ObjectMapperBuilder.java:832) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.http.converter.json.Jackson2ObjectMapperBuilder.configure(Jackson2ObjectMapperBuilder.java:691) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.http.converter.json.Jackson2ObjectMapperBuilder.build(Jackson2ObjectMapperBuilder.java:674) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.http.converter.json.MappingJackson2HttpMessageConverter.<init>(MappingJackson2HttpMessageConverter.java:59) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.http.converter.support.AllEncompassingFormHttpMessageConverter.<init>(AllEncompassingFormHttpMessageConverter.java:91) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.FormContentFilter.<init>(FormContentFilter.java:61) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.boot.web.servlet.filter.OrderedFormContentFilter.<init>(OrderedFormContentFilter.java:29) ~[spring-boot-2.5.6.jar:2.5.6]
+	at org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.formContentFilter(WebMvcAutoConfiguration.java:175) ~[spring-boot-autoconfigure-2.5.6.jar:2.5.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_292]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.3.12.jar:5.3.12]
+	... 57 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ser/std/ToStringSerializerBase
+	at com.fasterxml.jackson.datatype.jsr310.JavaTimeModule.<init>(JavaTimeModule.java:158) ~[jackson-datatype-jsr310-2.12.5.jar:2.12.5]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_292]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_292]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_292]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_292]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211) ~[spring-beans-5.3.12.jar:5.3.12]
+	... 71 common frames omitted
+
