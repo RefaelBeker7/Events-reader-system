@@ -69,7 +69,7 @@ public class ProductEventService {
     }
 
     @Transactional
-    public ProductEvent removeItemFromCart(Long eventId, Long productId) {
+    public ProductEvent removeProductFromEvent(Long eventId, Long productId) {
         ProductEvent productEvent = getProductEvent(eventId);
         Product product = productService.getProduct(productId);
         productEvent.removeProduct(product);
